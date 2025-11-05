@@ -1,0 +1,11 @@
+users
+
+1. Anjali 
+email - anjali234@gmail.com
+password - Anjali345
+role - "student"
+
+2. Arun Sharma
+email - arun321@gmail.com
+password - Arun4321
+role - "educator"

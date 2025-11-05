@@ -1,0 +1,27 @@
+// Package Used
+
+npm i  -> Install Packages
+1. express -> Helps in creating servers easily and managing routes, requests, and responses.
+
+2. dotenv > Keeps sensitive information secure and hidden from code.
+
+3. mongoose -> An ODM (Object Data Modeling) library for MongoDB. 
+            Helps you define schemas & models for your database.Makes interacting with MongoDB easier (Course.find(), User.save()).
+
+4. jsonwebtoken -> Used for authentication. Creates and verifies tokens 
+                (JWTs) so that users stay logged in securely.
+
+5. nodemon -> A dev tool that automatically restarts your server whenever
+             you make changes in your code.
+
+6. cookie-parser -> Middleware to parse cookies attached to client requests.
+                    Useful when you store JWTs or session info in cookies.
+
+7. bcryptjs -> A library for hashing and comparing passwords.
+                Ensures user passwords are stored securely in your database.
+
+8. validator -> Provides functions to validate and sanitize strings.
+                check if an email is valid. 
+
+9. cors -> Stands for Cross-Origin Resource Sharing.
+            Frontend ↔ Backend Communication
