@@ -17,10 +17,4 @@ courseRouter.post("/editlecture/:lectureId",isAuth,upload.single("videoUrl"),edi
 courseRouter.delete("/removelecture/:lectureId",isAuth,removeLecture)
 courseRouter.post("/getcreator",isAuth,getCreatorById)
 
-
-
-
-
-
-
 export default courseRouter

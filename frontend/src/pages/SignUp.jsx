@@ -4,7 +4,6 @@ import google from '../assets/google.jpg'
 import axios from 'axios'
 import { serverUrl } from '../App'
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-
 import { MdRemoveRedEye } from "react-icons/md";
 import { useNavigate } from 'react-router-dom'
 import { signInWithPopup } from 'firebase/auth'
@@ -13,6 +12,7 @@ import { ClipLoader } from 'react-spinners'
 import { toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { setUserData } from '../redux/userSlice'
+
 function SignUp() {
     const [name,setName]= useState("")
     const [email,setEmail]= useState("")
@@ -42,14 +42,14 @@ function SignUp() {
     }
     const googleSignUp = async () => {
         try {
-            const response = await signInWithPopup(auth,provider)
+            const response = await signInWithPopup(auth, provider)
             console.log(response)
             let user = response.user
             let name = user.displayName;
             let email=user.email
             
             
-            const result = await axios.post(serverUrl + "/api/auth/googlesignup" , {name , email ,role}
+            const result = await axios.post(serverUrl + "/api/auth/googlesignup" , {name , email, role}
                 , {withCredentials:true}
             )
             dispatch(setUserData(result.data))
