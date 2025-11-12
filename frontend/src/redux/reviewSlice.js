@@ -4,9 +4,6 @@ const reviewSlice=createSlice({
     name:"review",
     initialState:{
         allReview:[]
-       
-        
-
     },
     reducers:{
         setAllReview:(state,action)=>{

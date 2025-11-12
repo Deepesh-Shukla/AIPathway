@@ -14,6 +14,7 @@ function ForgotPassword() {
     const [newpassword,setNewPassword]= useState("")
     const [conPassword,setConpassword]= useState("")
 
+    // step 1
    const handleStep1 = async () => {
     setLoading(true)
     try {
@@ -28,42 +29,56 @@ function ForgotPassword() {
       toast.error(error.response.data.message)
       setLoading(false)
     }
-    
-   }
+   };
+
+   // step 2
     const handleStep2 = async () => {
-    setLoading(true)
-    try {
-      const result = await axios.post(`${serverUrl}/api/auth/verifyotp` , {email,otp} , {withCredentials:true})
-      console.log(result)
-      
-      toast.success(result.data.message)
-      setLoading(false)
-      setStep(3)
-    } catch (error) {
-      console.log(error)
-      toast.error(error.response.data.message)
-      setLoading(false)
-    }
-    
-   }
-    const handleStep3 = async () => {
-    setLoading(true)
-    try {
-      if(newpassword !== conPassword){
-        return toast.error("password does not match")
+      setLoading(true);
+      try {
+        const result = await axios.post(
+          `${serverUrl}/api/auth/verifyotp`,
+          { email, otp },
+          { withCredentials: true }
+        );
+        toast.success(result.data.message);
+
+        // IMPORTANT: store email for reset step
+        localStorage.setItem("resetEmail", email);
+
+        setStep(3);
+      } catch (error) {
+        toast.error(error.response.data.message);
       }
-      const result = await axios.post(`${serverUrl}/api/auth/resetpassword` , {email,password:newpassword} , {withCredentials:true})
-      console.log(result)
-      toast.success(result.data.message)
-      setLoading(false)
-      navigate("/login")
-    } catch (error) {
-      console.log(error)
-      toast.error(error.response.data.message)
-      setLoading(false)
-    }
-    
-   }
+      setLoading(false);
+    };
+
+    const handleStep3 = async () => {
+      setLoading(true);
+      try {
+        if (newpassword !== conPassword) {
+          setLoading(false);
+          return toast.error("Password does not match");
+        }
+
+        const savedEmail = localStorage.getItem("resetEmail"); // get stored email
+
+        const result = await axios.post(
+          `${serverUrl}/api/auth/resetpassword`,
+          { email: savedEmail, password: newpassword },
+          { withCredentials: true }
+        );
+
+        toast.success(result.data.message);
+
+        // Clear saved email for safety
+        localStorage.removeItem("resetEmail");
+
+        navigate("/login");
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+      setLoading(false);
+    };
 
 
   return (
