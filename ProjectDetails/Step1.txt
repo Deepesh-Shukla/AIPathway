@@ -1,0 +1,55 @@
+AIPathway -> A student learning Dashboard
+
+Made with using MERN STACK and redux for state management. 
+
+// Package Used
+
+npm i  -> Install Packages
+1. express -> Helps in creating servers easily and managing routes, requests, and responses.
+
+2. dotenv > Keeps sensitive information secure and hidden from code.
+
+3. mongoose -> An ODM (Object Data Modeling) library for MongoDB. Helps you define schemas & models for your database.Makes interacting with MongoDB easier (Course.find(), User.save()).
+
+4. jsonwebtoken -> Used for authentication. Creates and verifies tokens (JWTs) so that users stay logged in securely.
+
+5. nodemon -> A dev tool that automatically restarts your server whenever you make changes in your code.
+
+6. cookie-parser -> Middleware to parse cookies attached to client requests. Useful when you store JWTs or session info in cookies.
+
+7. bcryptjs -> A library for hashing and comparing passwords.
+                Ensures user passwords are stored securely in your database.
+
+8. validator -> Provides functions to validate and sanitize strings. check if an email is valid. 
+
+9. cors -> Stands for Cross-Origin Resource Sharing.
+            Frontend ↔ Backend Communication
+
+Step .1 -> Make connection with MongoDB using mongoose
+
+Step. 2 -> Create Authenication and Authorization System
+
+1. -> Create authController for login, logout and signup
+
+signup -> Check user already exist or not. If not then sign up
+          Check for email is valid or not using validator package
+          Check for password is valid or not must > than 8 characters.
+          Hash the password using bcrypt.hash method for security purpose.
+          Generate the token (using jwt) and send with cookie.because of this no need to tell the server who you are ?
+
+login -> Find the email in the database if user already exits
+         then takes password and compare password using bcrypt.compare that matches hash password with plain password both are same or not
+         Generate the token and send with cookie.because of this no need to tell the server who you are ?
+         If user not found then gives res User not found.
+
+logout -> Clear the token from the cookie with the help of this
+          server forget who you are and you have to login again.
+
+2. Create seperate routes for login, signup & logout. using express in seperate route folder
+
+3. Make dynamic routes in index.js
+
+4. Create a middleware 
+This check the user have token or not. If not then sends respond User doesn't have the token.
+If Yes, then verify the token using jwt.verify
+Check user have valid token or not . If valid then attach with userId. 

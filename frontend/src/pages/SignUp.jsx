@@ -27,7 +27,6 @@ function SignUp() {
   const dispatch = useDispatch();
 
   //   const serverUrl = import.meta.env.VITE_SERVER_URL;
-
   //   console.log("Server URL is:", import.meta.env.VITE_SERVER_URL);
 
   const handleSignUp = async () => {
@@ -86,7 +85,9 @@ function SignUp() {
             <h1 className="font-semibold text-[black] text-2xl">
               Let's get started
             </h1>
-            <h2 className="text-[#999797] text-[18px]">Create your Account</h2>
+            <h2 className="text-[#999797] text-[18px] px-5">
+              Create your Account
+            </h2>
           </div>
 
           <div className="flex flex-col gap-1 w-[80%] items-start justify-center px-3">
@@ -103,7 +104,7 @@ function SignUp() {
             />
           </div>
 
-          <div className="flex flex-col gap-1 w-[80%] items-start justify-center px-3">
+          <div className="flex flex-col gap-1 w-[80%]     items-start justify-center px-3">
             <label htmlFor="email" className="font-semibold">
               Email
             </label>
@@ -119,7 +120,8 @@ function SignUp() {
 
           <div className="flex flex-col gap-1 w-[80%] items-start justify-center px-3 relative">
             <label htmlFor="password" className="font-semibold">
-              Password
+              {" "}
+              Password{" "}
             </label>
             <input
               type={show ? "text" : "password"}
@@ -136,77 +138,72 @@ function SignUp() {
               />
             ) : (
               <IoEye
-                className="absolute w-[20px] h-[20px] cursor-pointer right-[5%] bottom-[10%]"
+                className="absolute w-[20px] h-[20px] cursor-pointer right-[9%] bottom-[10%]"
                 onClick={() => setShow((prev) => !prev)}
               />
             )}
           </div>
 
-          <div className="flex md:w-[50%] w-[70%] items-center justify-center gap-x-6">
-            <span
-              className={`px-[10px] py-[5px] border-[2px] border-[#e7e6e6] rounded-xl cursor-pointer hover:border-black ${
-                role === "student" ? "border-black" : "border-[#646464]"
-              }`}
-              onClick={() => setRole("student")}
-            >
-              Student
-            </span>
-            <span
-              className={`px-[10px] py-[5px] border-[2px] border-[#e7e6e6] rounded-xl cursor-pointer hover:border-black ${
-                role === "educator" ? "border-black" : "border-[#646464]"
-              }`}
-              onClick={() => setRole("educator")}
-            >
-              Educator{" "}
-            </span>
+          <div className="flex md:w-[50%] w-[70%] items-center
+             justify-center gap-x-6">
+            <span className={`px-[10px] py-[5px] border-[2px]
+                  border-[#e7e6e6] rounded-xl cursor-pointer hover:border-black ${ role === "student" ? "border-black" : "border-[#646464]"}`}
+                onClick={() => setRole("student")}>
+                Student{" "}</span>
+            <span className={`px-[10px] py-[5px] border-[2px]
+                  border-[#e7e6e6] rounded-xl cursor-pointer hover:border-black ${role === "educator" ? "border-black" : "border-[#646464]"}`}
+                onClick={() => setRole("educator")}>
+                Educator{" "}</span>
           </div>
 
-          <button
-            className="w-[80%] h-[40px] bg-black text-white cursor-pointer flex items-center justify-center rounded-[5px]"
-            onClick={handleSignUp}
-            disabled={loading}
-          >
-            {loading ? <ClipLoader size={30} color="white" /> : "SignUp"}
+          <button className="w-[80%] h-[40px] bg-black
+               text-white cursor-pointer flex items-center justify-center rounded-[5px]" 
+               onClick={handleSignUp} disabled={loading}
+          > {loading ? <ClipLoader size={30} color="white"/>
+           : "SignUp"}
           </button>
 
           <div className="w-[80%] flex items-center gap-2">
             <div className="w-[25%] h-[0.5px] bg-[#c4c4c4]"></div>
-            <div className="w-[50%] text-[15px] text-[#6f6f6f] flex items-center justify-center">
+            <div className="w-[50%] text-[15px] text- [#6f6f6f] flex items-center justify-center">
               Or continue
             </div>
             <div className="w-[25%] h-[0.5px] bg-[#c4c4c4]"></div>
           </div>
 
           {/* <div
-            className="w-[80%] h-[40px] border border-[black] rounded-[5px] flex items-center justify-center cursor-pointer relative z-10"
-            onClick={googleSignUp}
-          >
-            <img src={google} className="w-[25px]" alt="google icon" />
-            <span className="text-[18px] text-gray-500">oogle</span>
-          </div> */}
+              className="w-[80%] h-[40px] border border-[black] rounded-[5px] flex items-center justify-center cursor-pointer relative z-10"
+              onClick={googleSignUp}>
+              <img src={google} className="w-[25px]" alt="google icon" />
+              <span className="text-[18px] text-gray-500">oogle</span>
+            </div> */}
 
           <button
             type="button"
             onClick={googleSignUp}
             className="w-[80%] h-[40px] border border-black rounded-[5px] flex items-center justify-center cursor-pointer relative z-10"
           >
-            <img src={google} className="w-[25px]" alt="google icon" />
-            <span className="text-[18px] text-gray-600 ml-1">oogle</span>
+            <img src={google} className="w-[25px]" alt="google  icon" />
+            <span className="text-[18px] text-gray-600">oogle</span>
           </button>
 
           <div className="text-[#6f6f6f]">
-            Already have an account ?
+            Already have an account?
             <span
-              className="underline underline-offset-1 text-[black] cursor-pointer "
+              className="underline underline-offset-1 text-[black] cursor-pointer ml-1"
               onClick={() => navigate("/login")}
             >
-              Login
+              {" "}
+              Login{" "}
             </span>
           </div>
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[black] md:flex items-center justify-center flex-col hidden">
+        <div
+          className="w-[50%] h-[100%] rounded-r-2xl
+             bg-[black] md:flex items-center justify-center flex-col hidden"
+        >
           <img src={logo} alt="logo" className="w-30 shadow-2xl" />
           <span className="text-2xl text-white">AIPathway</span>
         </div>

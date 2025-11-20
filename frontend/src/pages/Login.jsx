@@ -76,26 +76,34 @@ function Login() {
         <div className="md:w-[50%] w-[100%] h-[100%] flex flex-col items-center justify-center gap-3">
           <div>
             <h1 className="font-semibold text-[black] text-2xl">
-              Welcome back
+              Welcome back{" "}
             </h1>
-            <h2 className="text-[#999797] text-[18px]">Login your Account</h2>
+            <h2 className="text-[#999797] text-[18px] px-5">
+              Login your Account
+            </h2>
           </div>
 
-          <div className="flex flex-col gap-1 w-[80%] items-start justify-center px-3">
+          <div
+            className="flex flex-col gap-1 w-[80%]
+               items-start justify-center px-3"
+          >
             <label htmlFor="email" className="font-semibold">
               Email
             </label>
             <input
               type="email"
               id="email"
-              className="border-1 w-[100%] h-[35px] border-[#e7e6e6] text-[15px] px-[20px]"
+              className="border-1  w-[100%] h-[35px] border-[#e7e6e6] text-[15px] px-[20px]"
               placeholder="Your Email"
               onChange={(event) => setEmail(event.target.value)}
               value={email}
             />
           </div>
 
-          <div className="flex flex-col gap-1 w-[80%] items-start justify-center px-3 relative">
+          <div
+            className="flex flex-col gap-1 w-[80%]
+             items-start justify-center px-3 relative"
+          >
             <label htmlFor="password" className="font-semibold">
               Password
             </label>
@@ -109,12 +117,14 @@ function Login() {
             />
             {!show ? (
               <IoEyeOutline
-                className="absolute w-[20px] h-[20px] cursor-pointer right-[9%] bottom-[10%]"
+                className="absolute w-[20px]
+               h-[20px] cursor-pointer right-[9%] bottom-[10%]"
                 onClick={() => setShow((prev) => !prev)}
               />
             ) : (
               <IoEye
-                className="absolute w-[20px] h-[20px] cursor-pointer right-[5%] bottom-[10%]"
+                className="absolute w-[20px] h-[20px]
+               cursor-pointer right-[9%] bottom-[10%]"
                 onClick={() => setShow((prev) => !prev)}
               />
             )}
@@ -125,6 +135,7 @@ function Login() {
             onClick={handleLogin}
             disabled={loading}
           >
+            {" "}
             {loading ? <ClipLoader size={30} color="white" /> : "Login"}
           </button>
 
@@ -137,29 +148,36 @@ function Login() {
 
           <div className="w-[80%] flex items-center gap-2">
             <div className="w-[25%] h-[0.5px] bg-[#c4c4c4]"></div>
-            <div className="w-[50%] text-[15px] text-[#6f6f6f] flex items-center justify-center">
+            <div
+              className="w-[50%] text-[15px] text-[#6f6f6f]
+              flex items-center justify-center"
+            >
               Or continue
             </div>
             <div className="w-[25%] h-[0.5px] bg-[#c4c4c4]"></div>
           </div>
 
-          {/* <div className="w-[80%] h-[40px] border-1 border-[black] rounded-[5px] flex items-center justify-center">
+          {/* <div className="w-[80%] h-[40px] border-1
+             border-[black] rounded-[5px] flex items-center justify-center">
             <img src={google} className="w-[25px]" alt="" />
             <span className="text-[18px] text-gray-500">oogle</span>
           </div> */}
+
           <button
             type="button"
             onClick={googleLogin}
             className="w-[80%] h-[40px] border border-black rounded-[5px] flex items-center justify-center cursor-pointer relative z-10"
           >
             <img src={google} className="w-[25px]" alt="google icon" />
-            <span className="text-[18px] text-gray-600 ml-1">oogle</span>
+            <span className="text-[18px] text-gray-600">oogle</span>
           </button>
 
           <div className="text-[#6f6f6f]">
-            Create new account
+            {" "}
+            Create new account?
             <span
-              className="underline underline-offset-1 text-[black] cursor-pointer "
+              className="underline underline-offset-1
+               text-[black] cursor-pointer ml-1"
               onClick={() => navigate("/signup")}
             >
               SignUp
@@ -168,7 +186,10 @@ function Login() {
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[black] md:flex items-center justify-center flex-col hidden">
+        <div
+          className="w-[50%] h-[100%] rounded-r-2xl
+           bg-[black] md:flex items-center justify-center flex-col hidden"
+        >
           <img src={logo} alt="logo" className="w-30 shadow-2xl" />
           <span className="text-2xl text-white">AIPathway</span>
         </div>

@@ -1,0 +1,27 @@
+SetUp Frontend
+-> Install Vite -> Use React -> Select Javascript
+-> Set up Tailwind Css for styling
+
+Vite -> Vite is a super-fast frontend build tool that replaces older tools like Webpack and CRA (Create React App).
+It is mainly used with React, Vue, Svelte, vanilla JS, etc.
+
+1. Super Fast Startup -> Vite runs instantly — no slow bundling.
+2. Hot Module Replacement (HMR) -> Changes in your code update in the browser almost instantly.
+3. Very lightweight and simple -> No heavy configs.
+4. Works with modern JavaScript features
+
+Set up React Dependencies
+react-dom -> Handles rendering React components to the browser’s
+             DOM.
+react-router-dom -> Enables navigation and routing between pages
+                     in a React app.
+react-icons -> Provides a collection of popular icon libraries
+                as React components.
+react-toastify-> Shows customizable toast notifications in React
+                 apps.
+react-spinners -> Offers loading spinner components for React.
+axios -> A promise-based HTTP client used to send API requests.
+react-redux -> Connects Redux state management with
+                 React components.
+@reduxjs/toolkit -> A simplified, modern, and optimized way to
+                     use Redux with built-in tools.
