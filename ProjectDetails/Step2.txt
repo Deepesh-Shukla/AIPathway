@@ -25,3 +25,25 @@ react-redux -> Connects Redux state management with
                  React components.
 @reduxjs/toolkit -> A simplified, modern, and optimized way to
                      use Redux with built-in tools.
+
+We setup Browser router for sending the request to the routes
+
+Create pages folder inside src folder.
+-> Signup.jsx
+-> Login.jsx
+
+Create routes for these in App.jsx and set ToastContainer for sending the popup of success and failure of the activites done by the user.
+Set serverUrl also.
+
+SetUp Redux create seperate folder redux inside src folder
+
+Why we use Redux ?
+We use Redux to manage state in a predictable, organized, and scalable way—especially in large React applications.
+✅ 1. To Manage Global State
+Some data needs to be accessed by many components.
+Without Redux → we pass props everywhere (prop drilling).
+With Redux → any component can get data directly.
+Any component → directly reads data from the store. 
+
+Set us redux store using configure store
+Creating userSlice for further use. 

@@ -53,3 +53,23 @@ logout -> Clear the token from the cookie with the help of this
 This check the user have token or not. If not then sends respond User doesn't have the token.
 If Yes, then verify the token using jwt.verify
 Check user have valid token or not . If valid then attach with userId. 
+
+
+
+Signup & Login Pages in Create
+-> Here user can signup using their name, email & password and signup through Google Authenication also.
+-> If user is already there and it will be redirect to login page.
+-> We have password functionality to show or hide using useState feature of react.
+-> Fetch the controller for signup created in backend for checking and controlling the functionality of the signup using axios and serverUrl.
+-> And sets the token with the cookie when the user signup.
+-> And redirect the user to the home page when signup happens successfully.
+-> And gives the notification using Toastify.
+
+Login 
+-> Here user can login through their registered email and sand same password.
+-> If user doesn't exist then show error user does not exist.
+-> And their is also a functionality of Forget Password. If user forgot their password then it can be reset through gmail using otp.
+-> Fetch the controller for login created in backend for checking and controlling the functionality of the login using axios and serverUrl.
+-> And sets the token with the cookie when the user login.
+-> And redirect the user to the home page when login happens successfully.
+-> And gives the notification using Toastify.
